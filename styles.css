@@ -1,0 +1,101 @@
+/* Background */
+body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    /* CENTER EVERYTHING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Floating hearts container */
+.hearts {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Heart shape */
+.heart {
+    position: absolute;
+    bottom: -20px;
+    background: #ff66b8;
+    transform: rotate(45deg);
+    opacity: 0.8;
+    border-radius: 4px;
+    animation: floatUp linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    background: #ff66b8;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart::after {
+    left: -50%;
+    top: 0;
+}
+
+/* Heart animation */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Center text box */
+.center-box {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    color: #ff9ad4;
+}
+
+/* Title */
+.center-box h1 {
+    font-size: 42px;
+    margin: 0;
+    color: #ffb3e4;
+    text-shadow: 0 0 20px rgba(255, 111, 181, 0.5);
+}
+
+/* Main message */
+.msg {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ffd7f0;
+}
+
+/* Signature */
+.love {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff66b8;
+    text-shadow: 0 0 15px rgba(255, 102, 184, 0.6);
+}
+
